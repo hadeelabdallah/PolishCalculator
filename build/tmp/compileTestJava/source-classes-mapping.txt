@@ -1,2 +1,4 @@
-CalculatorTest.java
- CalculatorTest
+NewCalculatorTest.java
+ NewCalculatorTest
+CalculatorWithThreeValues.java
+ CalculatorWithThreeValues
