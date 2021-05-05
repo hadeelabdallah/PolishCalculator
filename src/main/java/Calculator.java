@@ -1,18 +1,14 @@
 import java.math.BigDecimal;
-import java.util.Stack;
 
 public class Calculator {
-    private Stack<BigDecimal> stack = new Stack();
+    private OperandStack stack = new OperandStack();
 
     public BigDecimal getAccumulator() {
-        return stack.size() != 0 ? stack.peek() : BigDecimal.ZERO;
+        return stack.peek();
     }
 
     public void setAccumulator(BigDecimal bigDecimal) {
-        if(stack.size() > 0){
-            stack.pop();
-        }
-        stack.push(bigDecimal);
+        stack.replaceTop(bigDecimal);
     }
 
     public void enter() {
@@ -21,5 +17,14 @@ public class Calculator {
 
     public void drop() {
         stack.pop();
+    }
+
+    public void execute(char op) {
+        switch (op){
+            case '+': new AddOperation().applyOperation(stack);
+            break;
+            case '-': new SubtractOperation().applyOperation(stack);
+            break;
+        }
     }
 }

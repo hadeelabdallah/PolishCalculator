@@ -1,4 +1,8 @@
-NewCalculatorTest.java
- NewCalculatorTest
+OperandStackTest.java
+ OperandStackTest
 CalculatorWithThreeValues.java
  CalculatorWithThreeValues
+NewCalculatorTest.java
+ NewCalculatorTest
+OperationsTest.java
+ OperationsTest
