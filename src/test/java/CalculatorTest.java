@@ -24,4 +24,21 @@ public class CalculatorTest {
         calculator.setAccumulator(value);
         Assertions.assertEquals(value,calculator.getAccumulator());
     }
+
+    @Test
+    void testPushAndPopValuesFromAccumulator(){
+        BigDecimal value1 = new BigDecimal(9);
+        BigDecimal value2 = new BigDecimal(10);
+        BigDecimal value3 = new BigDecimal(11);
+        calculator.setAccumulator(value1);
+        calculator.enter();
+        calculator.setAccumulator(value2);
+        calculator.enter();
+        calculator.setAccumulator(value3);
+        Assertions.assertEquals(value3, calculator.getAccumulator());
+        calculator.drop();
+        Assertions.assertEquals(value2, calculator.getAccumulator());
+        calculator.drop();
+        Assertions.assertEquals(value1, calculator.getAccumulator());
+    }
 }
